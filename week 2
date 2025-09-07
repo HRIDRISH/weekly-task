@@ -1,0 +1,164 @@
+1)	Write a program to interchange the largest and the smallest number in an array.
+Answer=>
+
+# Python program to interchange the largest and smallest number in an array
+
+# Define the array (list of numbers)
+arr = [10, 5, 20, 8, 15]
+
+# Finding the index of the smallest and largest elements
+min_index = arr.index(min(arr))  # index of smallest no.
+max_index = arr.index(max(arr))  # index of largest no.
+
+#  Print the original array
+print("Original array is :", arr)
+
+# Swaping the smallest and largest elements
+arr[min_index], arr[max_index] = arr[max_index], arr[min_index]
+
+# Print the updated array
+print("Array after swapping largest and smallest:", arr)
+
+_________________________________________________________________________________________________________________________________________
+
+2)	In a small company there are five salesmen. Each salesman is supposed to sell three products. Write a program using a 2D array to
+    print (i) the total sales by each salesman and (ii) total sales of each item
+
+Answer=>
+
+# Create a 2D array  to store  data
+# Rows = 5 salesmen, Columns = 3 products
+# Each inner list represents one salesman’s sales for 3 products
+sales = [
+    [100, 200, 150],   # Salesman 1
+    [80, 120, 100],    # Salesman 2
+    [90, 160, 130],    # Salesman 3
+    [110, 140, 120],   # Salesman 4
+    [95, 105, 125]     # Salesman 5
+]
+
+#Print total sales by each salesman
+print("Total sales by each salesman:")
+for i in range(5):  # Loop through each salesman
+    total = sum(sales[i])  # Sum of all products sold by salesman i
+    print(f"Salesman {i+1}: {total}")
+
+#Print total sales of each item
+print("\nTotal sales of each product:")
+for j in range(3):  # Loop through each product
+    total = 0
+    for i in range(5):  # Loop through each salesman
+        total += sales[i][j]  # Add sales of product j by salesman i
+    print(f"Product {j+1}: {total}")
+
+________________________________________________________________________________________________________________________________________
+
+3) Write a program to input two m x n matrices and then calculate the sum of their corresponding elements 
+  and store it in a third m x n matrix.
+
+Answer=>
+
+# Python code to add two m x n matrices
+
+#  Input the size of the matrices
+m = int(input("Enter number of rows (m): "))
+n = int(input("Enter number of columns (n): "))
+
+#  Create empty matrices
+matrix1 = []
+matrix2 = []
+sum_matrix = []
+
+#  Input elements for the first matrix
+print("\nEnter elements for the first matrix:")
+for i in range(m):
+    row = []
+    for j in range(n):
+        val = int(input(f"Enter element at position [{i+1}][{j+1}]: "))
+        row.append(val)
+    matrix1.append(row)
+
+#  Input elements for the second matrix
+print("\nEnter elements for the second matrix:")
+for i in range(m):
+    row = []
+    for j in range(n):
+        val = int(input(f"Enter element at position [{i+1}][{j+1}]: "))
+        row.append(val)
+    matrix2.append(row)
+
+#  Add the two matrix and store the result in sum_matrix
+for i in range(m):
+    row = []
+    for j in range(n):
+        # Adding corresponding elements
+        row.append(matrix1[i][j] + matrix2[i][j])
+    sum_matrix.append(row)
+
+#  Print the result
+print("\nSum of the two matrices:")
+for row in sum_matrix:
+    print(row)
+
+________________________________________________________________________________________________________________________________________
+
+4)	Write a program to read and display a 2 x 2 x 2 array.
+
+Answer=>
+
+# Python program to read and display a 2 x 2 x 2 array
+
+# Create an empty 3D array
+array_3d = []
+
+# Read values into the 3D array
+print("Enter elements for a 2 x 2 x 2 array:")
+
+for i in range(2):  # Loop for depth (block)
+    block = []
+    print(f"\nBlock {i+1}:")
+    for j in range(2):  # Loop for rows
+        row = []
+        for k in range(2):  # Loop for columns
+            val = int(input(f"Enter element at position [{i+1}][{j+1}][{k+1}]: "))
+            row.append(val)
+        block.append(row)
+    array_3d.append(block)
+
+#  Display the 3D array
+print("\nThe 2 x 2 x 2 array is:")
+
+for i in range(2):
+    print(f"\nBlock {i+1}:")
+    for j in range(2):
+        print(array_3d[i][j])  # Print each row
+
+________________________________________________________________________________________________________________________________________
+
+5)	Write a program which illustrates the use of a pointer to a three-dimensional array.
+
+Answer=>
+
+# Python program to show how a "pointer" (reference) works with a 3D array
+
+#  Create a small 3D array (2 blocks, 2 rows, 2 columns)
+array = [
+    [ [1, 2], [3, 4] ],
+    [ [5, 6], [7, 8] ]
+]
+
+#  Make another variable that points to the same array
+pointer = array  # This is like a pointer (both refer to the same data)
+
+#  Print the array using the pointer
+print("Array using pointer:")
+print(pointer)
+
+# Change one value using the pointer
+pointer[0][0][0] = 99  # Change the first value
+
+#Print the original array to show that it changed
+print("\nOriginal array after change through pointer:")
+print(array)
+
+________________________________________________________________________________________________________________________________________
